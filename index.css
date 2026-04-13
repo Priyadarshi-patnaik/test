@@ -1,0 +1,242 @@
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --background-color: #f4f7fc;
+  --container-bg-color: #ffffff;
+  --text-color: #333;
+  --border-color: #dee2e6;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+}
+
+.container {
+  background-color: var(--container-bg-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.file-input-wrapper {
+  position: relative;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.file-input-wrapper:hover {
+  border-color: var(--primary-color);
+  background-color: #f8f9fa;
+}
+
+.file-input-wrapper input[type='file'] {
+  display: none;
+}
+
+.file-input-label-text {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.file-name {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #495057;
+  word-break: break-all;
+}
+
+.number-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.number-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background-color: #a0c7ff;
+  cursor: not-allowed;
+}
+
+.status {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 123, 255, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: var(--error-color);
+  font-weight: 500;
+}
+
+.results {
+  margin-top: 2rem;
+}
+
+.results h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.chunk-list {
+  list-style: none;
+}
+
+.chunk-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.chunk-item span {
+  font-weight: 500;
+  word-break: break-all;
+  padding-right: 1rem;
+}
+
+.chunk-item .btn {
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: var(--success-color);
+  flex-shrink: 0;
+}
+
+.chunk-item .btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .chunk-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .chunk-item .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Audio Splitter Pro",
+  "description": "A robust tool to split large M4A, AAC, and MP3 files (up to 100MB) into smaller MP3 chunks entirely in the browser.",
+  "requestFramePermissions": []
+}
